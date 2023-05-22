@@ -1,3 +1,4 @@
+import 'package:bookly_app/Core/Utils/assets.dart';
 import 'package:flutter/cupertino.dart';
 
 class SplashViewBody extends StatelessWidget
@@ -8,8 +9,10 @@ class SplashViewBody extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Column(
-      children: const [
-
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Image.asset(AssetsData.logo)
       ],
     );
   }
