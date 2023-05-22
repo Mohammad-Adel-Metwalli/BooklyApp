@@ -18,3 +18,7 @@ flutter:
   uses-material-design: true
   assets:
     - 'Assets/Images/'
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: Assets/Fonts/Poppins_Family/Poppins-Bold.ttf
