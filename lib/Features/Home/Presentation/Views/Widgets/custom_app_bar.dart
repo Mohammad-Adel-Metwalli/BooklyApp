@@ -1,6 +1,7 @@
 import 'package:bookly_app/Core/Utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomAppBar extends StatelessWidget
 {
@@ -13,10 +14,7 @@ class CustomAppBar extends StatelessWidget
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 45),
       child: Row(
         children: [
-          Image.asset(
-            AssetsData.logo,
-            height: 28,
-          ),
+          SvgPicture.asset(AssetsData.logo, height: 26),
 
           const Spacer(),
 
