@@ -8,21 +8,21 @@ class CustomListViewItem extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
-      child: AspectRatio(
-        aspectRatio: 2.6/4,
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.circular(22),
-            image: const DecorationImage(
-                image: AssetImage(AssetsData.bookImage),
-              fit: BoxFit.fill
-            )
-          ),
+    return AspectRatio(
+      aspectRatio: 1.2/2,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.red,
+          borderRadius: BorderRadius.circular(22),
+          image: const DecorationImage(
+              image: AssetImage(AssetsData.bookImage),
+            fit: BoxFit.fill
+          )
         ),
       ),
     );
   }
 }
+
+
+

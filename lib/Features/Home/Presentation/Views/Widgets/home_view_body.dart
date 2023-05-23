@@ -1,6 +1,6 @@
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/custom_list_view_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'custom_app_bar.dart';
+import 'featured_list_view_item.dart';
 
 class HomeViewBody extends StatelessWidget
 {
@@ -13,7 +13,7 @@ class HomeViewBody extends StatelessWidget
       children: [
         CustomAppBar(),
 
-        CustomListViewItem()
+        FeaturedBooksListView()
       ],
     );
   }
