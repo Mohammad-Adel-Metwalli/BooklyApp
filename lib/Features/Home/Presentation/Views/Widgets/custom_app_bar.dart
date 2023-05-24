@@ -11,7 +11,7 @@ class CustomAppBar extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 45),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 45),
       child: Row(
         children: [
           SvgPicture.asset(AssetsData.logo, height: 26),

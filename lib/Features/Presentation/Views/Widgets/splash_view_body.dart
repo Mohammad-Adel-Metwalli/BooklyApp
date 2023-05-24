@@ -32,13 +32,13 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   {
     Future.delayed(const Duration(seconds: 4), ()
     {
-      Get.to(() => const HomeView(), transition: Transition.zoom, duration: durationOfPageTransition);
+      Get.to(() => const HomeView(), transition: Transition.rightToLeft, duration: durationOfPageTransition);
     });
   }
 
   void initSlidingAnimation()
   {
-    animationController = AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    animationController = AnimationController(vsync: this, duration: const Duration(seconds: 3));
     slidingAnimation = Tween<Offset>(begin: const Offset(0,20), end: Offset.zero).animate(animationController);
 
     animationController.forward();
