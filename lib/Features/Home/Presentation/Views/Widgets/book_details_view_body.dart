@@ -3,6 +3,7 @@ import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'book_rating_only.dart';
+import 'books_action.dart';
 import 'custom_book_details_app_bar.dart';
 
 class BookDetailsViewBody extends StatelessWidget
@@ -38,13 +39,12 @@ class BookDetailsViewBody extends StatelessWidget
 
           const BookRatingOnly(),
 
-          const SizedBox(),
+          const SizedBox(height: 37),
 
-
+          const BooksAction()
         ],
       ),
     );
   }
 }
-
 
