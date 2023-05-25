@@ -16,49 +16,58 @@ class BookDetailsViewBody extends StatelessWidget
   {
     var width = MediaQuery.of(context).size.width;
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const CustomBookDetailsAppBar(),
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const CustomBookDetailsAppBar(),
 
-          const SizedBox(height: 20),
+                const SizedBox(height: 20),
 
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .2),
-            child: const CustomBookImage(),
-          ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * .2),
+                  child: const CustomBookImage(),
+                ),
 
-          const SizedBox(height: 26),
+                const SizedBox(height: 26),
 
-          Text('The Jungle Book', style: GoogleFonts.doHyeon(textStyle: const TextStyle(fontSize: 30))),
+                Text('The Jungle Book', style: GoogleFonts.doHyeon(textStyle: const TextStyle(fontSize: 30))),
 
-          Text('Rudyard Kipling', style: GoogleFonts.doHyeon(textStyle: const TextStyle(fontSize: 20, color: greyColor))),
+                Text('Rudyard Kipling', style: GoogleFonts.doHyeon(textStyle: const TextStyle(fontSize: 20, color: greyColor))),
 
-          const SizedBox(height: 10),
+                const SizedBox(height: 10),
 
-          const BookRatingOnly(),
+                const BookRatingOnly(),
 
-          const SizedBox(height: 29),
+                const SizedBox(height: 29),
 
-          const BooksAction(),
+                const BooksAction(),
 
-          const SizedBox(height: 48),
+                const Expanded(child: SizedBox(height: 50)),
 
-          const Padding(
-            padding: EdgeInsets.only(left: 6),
-            child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text('You can also like', style: TextStyle(fontSize: 14))
+                const Padding(
+                  padding: EdgeInsets.only(left: 6),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('You can also like', style: TextStyle(fontSize: 14))
+                  ),
+                ),
+
+                const SizedBox(height: 8),
+
+                const BooksDetailsListView(),
+
+                const SizedBox(height: 15)
+              ],
             ),
           ),
-
-          const SizedBox(height: 8),
-
-          const BooksDetailsListView(),
-        ],
-      ),
+        )
+      ],
     );
   }
 }
