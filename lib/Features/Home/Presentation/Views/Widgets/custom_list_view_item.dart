@@ -2,9 +2,9 @@ import 'package:bookly_app/Core/Utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomListViewItem extends StatelessWidget
+class CustomBookImage extends StatelessWidget
 {
-  const CustomListViewItem({Key? key}) : super(key: key);
+  const CustomBookImage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context)
