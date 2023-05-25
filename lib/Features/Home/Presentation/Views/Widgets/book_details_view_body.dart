@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/books_details_list_view.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/custom_list_view_item.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
@@ -22,14 +23,14 @@ class BookDetailsViewBody extends StatelessWidget
         children: [
           const CustomBookDetailsAppBar(),
 
-          const SizedBox(height: 30.82),
+          const SizedBox(height: 20),
 
           Padding(
             padding: EdgeInsets.symmetric(horizontal: width * .2),
             child: const CustomBookImage(),
           ),
 
-          const SizedBox(height: 37),
+          const SizedBox(height: 26),
 
           Text('The Jungle Book', style: GoogleFonts.doHyeon(textStyle: const TextStyle(fontSize: 30))),
 
@@ -39,9 +40,23 @@ class BookDetailsViewBody extends StatelessWidget
 
           const BookRatingOnly(),
 
-          const SizedBox(height: 37),
+          const SizedBox(height: 29),
 
-          const BooksAction()
+          const BooksAction(),
+
+          const SizedBox(height: 48),
+
+          const Padding(
+            padding: EdgeInsets.only(left: 6),
+            child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text('You can also like', style: TextStyle(fontSize: 14))
+            ),
+          ),
+
+          const SizedBox(height: 8),
+
+          const BooksDetailsListView(),
         ],
       ),
     );
