@@ -1,5 +1,15 @@
 import 'package:bookly_app/generated/json/base/json_convert_content.dart';
 import 'package:bookly_app/Features/Home/Data/Models/book_model.dart';
+import '../../Features/Home/Data/Models/book_model_access_info.dart';
+import '../../Features/Home/Data/Models/book_model_access_info_epub.dart';
+import '../../Features/Home/Data/Models/book_model_access_info_pdf.dart';
+import '../../Features/Home/Data/Models/book_model_sale_info.dart';
+import '../../Features/Home/Data/Models/book_model_search_info.dart';
+import '../../Features/Home/Data/Models/book_model_volume_info.dart';
+import '../../Features/Home/Data/Models/book_model_volume_info_image_links.dart';
+import '../../Features/Home/Data/Models/book_model_volume_info_industry_identifiers.dart';
+import '../../Features/Home/Data/Models/book_model_volume_info_panelization_summary.dart';
+import '../../Features/Home/Data/Models/book_model_volume_info_reading_modes.dart';
 
 BookModel $BookModelEntityFromJson(Map<String, dynamic> json) {
 	final BookModel bookModelEntity = BookModel();
