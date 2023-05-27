@@ -4,6 +4,6 @@ import '../Models/book_model.dart';
 
 abstract class HomeRepository
 {
-  Future<Either<Failures, List<BookModel>>> fetchBestSellerBooks();
+  Future<Either<Failures, List<BookModel>>> fetchNewestBooks();
   Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks();
 }
