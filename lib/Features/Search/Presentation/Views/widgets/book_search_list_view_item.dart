@@ -51,7 +51,9 @@ class BookSearchListViewItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                    const BookPriceAndRating()
+                    // child: BookPriceAndRating(
+                    //   bookModel: ,
+                    // )
                   ],
                 ),
               )
