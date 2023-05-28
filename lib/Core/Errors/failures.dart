@@ -1,20 +1,16 @@
 import 'package:dio/dio.dart';
 
-abstract class Failures
-{
+abstract class Failures {
   final String errorMessage;
 
   Failures(this.errorMessage);
 }
 
-class ServerFailures extends Failures
-{
+class ServerFailures extends Failures {
   ServerFailures(super.errorMessage);
 
-  factory ServerFailures.fromDioError(DioError error)
-  {
-    switch(error.type)
-    {
+  factory ServerFailures.fromDioError(DioError error) {
+    switch (error.type) {
       case DioErrorType.connectionTimeout:
         return ServerFailures('Connection timed out');
 
@@ -25,7 +21,8 @@ class ServerFailures extends Failures
         return ServerFailures('Receive timed out');
 
       case DioErrorType.badResponse:
-        return ServerFailures.fromResponse(error.response!.statusCode!, error.response!.data);
+        return ServerFailures.fromResponse(
+            error.response!.statusCode!, error.response!.data);
 
       case DioErrorType.cancel:
         return ServerFailures('The request has been cancelled');
@@ -34,8 +31,7 @@ class ServerFailures extends Failures
         return ServerFailures('Check out your connection');
 
       case DioErrorType.unknown:
-        if(error.message!.contains('SocketException'))
-        {
+        if (error.message!.contains('SocketException')) {
           return ServerFailures('No internet connection');
         }
 
@@ -49,25 +45,15 @@ class ServerFailures extends Failures
     }
   }
 
-  factory ServerFailures.fromResponse(int statusCode, dynamic response)
-  {
-    if(statusCode == 400 || statusCode == 401 || statusCode == 403)
-    {
+  factory ServerFailures.fromResponse(int statusCode, dynamic response) {
+    if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
       return ServerFailures(response['error']['message']);
-    }
-
-    else if(statusCode == 404)
-    {
-      return ServerFailures('Your request isn\'t found, Please try again later');
-    }
-
-    else if(statusCode == 500)
-    {
+    } else if (statusCode == 404) {
+      return ServerFailures(
+          'Your request isn\'t found, Please try again later, $response');
+    } else if (statusCode == 500) {
       return ServerFailures('Internal server error, Please try again later');
-    }
-
-    else
-    {
+    } else {
       return ServerFailures('Oops there is an error, Please try again');
     }
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class SlidingText extends StatelessWidget
-{
+class SlidingText extends StatelessWidget {
   const SlidingText({
     super.key,
     required this.slidingAnimation,
@@ -10,11 +9,9 @@ class SlidingText extends StatelessWidget
   final Animation<Offset> slidingAnimation;
 
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     return AnimatedBuilder(
-        builder: (context, _)
-        {
+        builder: (context, _) {
           return SlideTransition(
             position: slidingAnimation,
             child: const Text(
@@ -24,8 +21,6 @@ class SlidingText extends StatelessWidget
             ),
           );
         },
-
-        animation: slidingAnimation
-    );
+        animation: slidingAnimation);
   }
 }

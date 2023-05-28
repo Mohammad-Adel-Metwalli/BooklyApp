@@ -4,25 +4,22 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-class CustomAppBar extends StatelessWidget
-{
+class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 45),
       child: Row(
         children: [
           SvgPicture.asset(AssetsData.logo, height: 26),
-
           const Spacer(),
-
-          IconButton(onPressed: ()
-          {
-            GoRouter.of(context).push('/searchView');
-          }, icon: const Icon(FontAwesomeIcons.magnifyingGlass, size: 24))
+          IconButton(
+              onPressed: () {
+                GoRouter.of(context).push('/searchView');
+              },
+              icon: const Icon(FontAwesomeIcons.magnifyingGlass, size: 24))
         ],
       ),
     );

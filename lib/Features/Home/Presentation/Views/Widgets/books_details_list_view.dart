@@ -1,25 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'custom_list_view_item.dart';
 
-class BooksDetailsListView extends StatelessWidget
-{
+class BooksDetailsListView extends StatelessWidget {
   const BooksDetailsListView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * .17,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index)
-          {
+          itemBuilder: (context, index) {
             return const Padding(
               padding: EdgeInsets.symmetric(horizontal: 5),
               child: CustomBookImage(),
             );
-          }
-      ),
+          }),
     );
   }
 }
