@@ -15,7 +15,9 @@ class BookDetailsSection extends StatelessWidget {
     return Column(children: [
       Padding(
         padding: EdgeInsets.symmetric(horizontal: width * .2),
-        child: const CustomBookImage(),
+        child: const CustomBookImage(
+          imageUrl: 'https://xaudiobooks.com/wp-content/uploads/2019/07/Grokking-Algorithms-By-Aditya-Bhargava-1536x1536.jpg',
+        ),
       ),
       const SizedBox(height: 26),
       Text('The Jungle Book',

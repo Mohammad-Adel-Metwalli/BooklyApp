@@ -13,7 +13,9 @@ class BooksDetailsListView extends StatelessWidget {
           itemBuilder: (context, index) {
             return const Padding(
               padding: EdgeInsets.symmetric(horizontal: 5),
-              child: CustomBookImage(),
+              child: CustomBookImage(
+                imageUrl: 'https://xaudiobooks.com/wp-content/uploads/2019/07/Grokking-Algorithms-By-Aditya-Bhargava-1536x1536.jpg',
+              ),
             );
           }),
     );
