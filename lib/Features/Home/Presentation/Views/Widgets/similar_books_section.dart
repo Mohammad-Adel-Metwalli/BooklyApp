@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'books_details_list_view.dart';
 
-class SimilarBooksSection extends StatelessWidget {
+class SimilarBooksSection extends StatelessWidget
+{
   const SimilarBooksSection({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

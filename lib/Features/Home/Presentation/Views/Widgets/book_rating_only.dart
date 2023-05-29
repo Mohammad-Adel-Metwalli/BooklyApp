@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 
-class BookRatingOnly extends StatelessWidget {
+import '../../../Data/Repositories/Models/book_model.dart';
+
+class BookRatingOnly extends StatelessWidget
+{
   const BookRatingOnly({
-    super.key,
+    super.key, required this.bookModel,
   });
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(Icons.star_rounded, color: Colors.yellow),
-        SizedBox(width: 5),
-        Text('4.8', style: TextStyle(fontSize: 12)),
-        SizedBox(width: 5),
-        Text('(2390)', style: TextStyle(fontSize: 12, color: Color(0xFFC9C8CD)))
+        const Icon(Icons.star_rounded, color: Colors.yellow),
+        const SizedBox(width: 5),
+        Text(bookModel.volumeInfo.averageRating.toString() == 'null' ?
+            '0.0' : bookModel.volumeInfo.averageRating.toString(), style: const TextStyle(fontSize: 12)),
+        const SizedBox(width: 5),
+        Text(bookModel.volumeInfo.ratingsCount.toString() == 'null' ?
+        '(0)' : '(${bookModel.volumeInfo.ratingsCount.toString()})', style: const TextStyle(fontSize: 12, color: Color(0xFFC9C8CD)))
       ],
     );
   }

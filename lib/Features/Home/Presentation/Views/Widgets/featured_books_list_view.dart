@@ -3,6 +3,7 @@ import 'package:bookly_app/Features/Home/Presentation/Manager/Featured%20books%2
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../Core/widgets/custom_error_widget.dart';
 import 'custom_list_view_item.dart';
 
@@ -28,8 +29,14 @@ class FeaturedBooksListView extends StatelessWidget
                 {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: CustomBookImage(
-                      imageUrl: state.books[index].volumeInfo.imageLinks!.thumbnail,
+                    child: GestureDetector(
+                      onTap: ()
+                      {
+                        GoRouter.of(context).push('/bookDetailsView', extra: state.books[index]);
+                      },
+                      child: CustomBookImage(
+                        imageUrl: state.books[index].volumeInfo.imageLinks!.thumbnail,
+                      ),
                     ),
                   );
                 }),

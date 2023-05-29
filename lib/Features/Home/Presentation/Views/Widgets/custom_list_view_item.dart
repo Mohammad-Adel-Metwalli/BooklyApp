@@ -18,7 +18,7 @@ class CustomBookImage extends StatelessWidget
           fit: BoxFit.fill,
           imageUrl: imageUrl,
           placeholder: (context, url) => const CustomLoadingIndicator(),
-          errorWidget: (context, url, error) => const Icon(Icons.report, color: Colors.red, size: 40)
+          errorWidget: (context, url, error) => const Icon(Icons.menu_book_rounded, color: Colors.red, size: 40)
         )
       ),
     );
