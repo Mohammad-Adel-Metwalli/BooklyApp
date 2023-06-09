@@ -20,12 +20,12 @@ class SearchResultListView extends StatelessWidget
       {
         if (state is SearchedBooksSuccess)
         {
-          if(CustomSearchTextField.category != '')
+          if(CustomSearchTextField.category != null && CustomSearchTextField.category != '')
           {
             return ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 padding: EdgeInsets.zero,
-                itemCount: 10,
+                itemCount: state.books.length,
                 itemBuilder: (context, index)
                 {
                   return Padding(

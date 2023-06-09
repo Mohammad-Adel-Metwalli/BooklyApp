@@ -32,7 +32,7 @@ class BookSearchListViewItem extends StatelessWidget
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(16)),
                     child: CustomBookImage(
-                      imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+                      imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
                     )
                 ),
               ),
@@ -56,7 +56,7 @@ class BookSearchListViewItem extends StatelessWidget
                     ),
 
                     Text(
-                        bookModel.volumeInfo.authors![0].toString(),
+                        bookModel.volumeInfo.authors![0].toString().length >= 28 ? '${bookModel.volumeInfo.authors![0].toString().substring(0, 28)} ....' : bookModel.volumeInfo.authors![0].toString(),
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                         style: Styles.doHyeonFont15),

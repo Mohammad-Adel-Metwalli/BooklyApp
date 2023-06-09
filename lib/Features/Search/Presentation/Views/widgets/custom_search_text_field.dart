@@ -2,6 +2,7 @@ import 'package:bookly_app/Features/Search/Presentation/Manager/Searched%20books
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomSearchTextField extends StatelessWidget
 {
@@ -18,6 +19,14 @@ class CustomSearchTextField extends StatelessWidget
         BlocProvider.of<SearchedBooksCubit>(context).fetchSearchedBooks(category: data);
       },
       decoration: InputDecoration(
+          prefixIcon: IconButton(
+            icon: const Icon(Icons.arrow_back_ios_sharp),
+            color: Colors.white,
+            onPressed: ()
+            {
+              GoRouter.of(context).pop();
+            }
+            ),
           enabledBorder: buildOutlineInputBorder(),
           focusedBorder: buildOutlineInputBorder(),
           hintText: 'Search',
