@@ -11,22 +11,25 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody>
-    with SingleTickerProviderStateMixin {
+class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProviderStateMixin
+{
   late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
 
   @override
-  void initState() {
+  void initState()
+  {
     super.initState();
 
     initSlidingAnimation();
     navigateToHome();
   }
 
-  void navigateToHome() {
-    Future.delayed(const Duration(seconds: 4), () {
-      GoRouter.of(context).push('/homeView');
+  void navigateToHome()
+  {
+    Future.delayed(const Duration(seconds: 4), ()
+    {
+      GoRouter.of(context).replace('/homeView');
     });
   }
 

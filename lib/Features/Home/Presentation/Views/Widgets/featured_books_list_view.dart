@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:scroll_snap_list/scroll_snap_list.dart';
 import '../../../../../Core/widgets/custom_error_widget.dart';
 import 'custom_list_view_item.dart';
 
@@ -21,8 +22,9 @@ class FeaturedBooksListView extends StatelessWidget
         {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .3,
-            child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
+            child: ScrollSnapList(
+                scrollPhysics: const BouncingScrollPhysics(),
+                dynamicItemSize: true,
                 scrollDirection: Axis.horizontal,
                 itemCount: state.books.length,
                 itemBuilder: (context, index)
@@ -39,7 +41,11 @@ class FeaturedBooksListView extends StatelessWidget
                       ),
                     ),
                   );
-                }),
+                },
+
+                itemSize: 185,
+                onItemFocus: (index){}
+            ),
           );
         }
 
